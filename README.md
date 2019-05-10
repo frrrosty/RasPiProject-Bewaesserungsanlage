@@ -1,7 +1,7 @@
 # RasPiProject-Bewaesserungsanlage
 Dies ist ein Projekt, welches von Studierenden im Masterstudiengang Fachdidaktik - Medien und Informatik erstellt wurde. 
 Die Module der Sensoren und Aktoren wurden aus der Datenbank von GroovePi angepasst. Der Code wird hier im laufenden Prozess 
-angepasst.
+angepasst. Zusätzlich zum hier bereitgestellten Code wird die GrovePi Bibliothek benötigt, welche auf GitHub verfügbar ist.
 
 Folgende Hardware wurde verwendet:
 - Raspberry Pi Model 3b+
