@@ -1,17 +1,12 @@
-import time
 import grovepi
 
-
-relay = 7
+relay = 2
 
 grovepi.pinMode(relay,"OUTPUT")
 
-# switch on for 5 seconds
-grovepi.digitalWrite(relay,1)
-print "on"
-time.sleep(5)
+def relay_on():
+	grovepi.digitalWrite(relay,1)
 
-# switch off for 5 seconds
-grovepi.digitalWrite(relay,0)
-print "off"
-time.sleep(5)
+
+def relay_off():
+	grovepi.digitalWrite(relay,0)

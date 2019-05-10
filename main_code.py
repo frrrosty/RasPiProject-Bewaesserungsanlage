@@ -1,23 +1,24 @@
-import time
-import calendar
-import math
-from grovepi import *
-from grove.gpio import GPIO
-import sys
+from def_traenken import *
+from day_checker import *
+from day_average import *
 
-#Anschluesse:
-moisture_sensor = 0
-ultrasonic_ranger = 4
-dht_pro = 3
-relay_pump = 7
-white = 1
+neustart = 0
+counter = 0
+letzte_bewaesserung = 0
 
-#Variablen:
-water_given = "Day"
-fuellstand = ultrasonicRead(ultrasonic_ranger)
-moisture_soil = grovepi.analogRead(moisture_sensor)
-temp_hum = grovepi.dht(sensor, white)
+while neustart == 0:
 
+	print("Programm gestartet: Counter steht bei: " + str(counter))
+	time.sleep(5)
+	traenken = tag_zum_traenken()
 
+	if counter >= 50:
+		print("Neustart notwendig!")
+		neustart = 1
+		break
 
+	if traenken == True:
+		traenken_starten()
 
+	elif traenken == False:
+		continue

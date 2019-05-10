@@ -263,18 +263,6 @@ def ultrasonicRead(pin):
     number = read_i2c_block(address)
     return (number[1] * 256 + number[2])
 
-def wasserstand():
- ultrasonic_ranger = 4
- distanz = ultrasonicRead(ultrasonic_ranger)
- if distanz < 5:
-  print("Das Fass ist voll")
- elif distanz < 20:
-  print("Das Fass ist halb voll")
- elif distanz < 50:
-  print("Das Fass ist leer")
- else:
-  ("Es besteht ein fehler mit dem Sensor!")
-
 # Read the firmware version
 def version():
     write_i2c_block(address, version_cmd + [unused, unused, unused])

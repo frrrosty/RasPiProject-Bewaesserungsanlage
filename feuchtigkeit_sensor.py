@@ -15,21 +15,12 @@
 # 		425  sensor in humid soil
 # 		690  sensor in water
 
-import time
-import grovepi
+from grovepi import *
 
-# Connect the Grove Moisture Sensor to analog port A0
+# Connect the Grove Moisture Sensor to analog port A1
 # SIG,NC,VCC,GND
 moisture_sensor = 0
 
-
-while True:
-	try:
-		print(grovepi.analogRead(moisture_sensor))
-
-		time.sleep(.5)
-
-	except KeyboardInterrupt:
-		break
-	except IOError:
-		print ("Error")
+def topf_hum():
+	feuchtigkeit = analogRead(moisture_sensor)
+	return feuchtigkeit

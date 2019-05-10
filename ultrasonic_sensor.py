@@ -1,20 +1,12 @@
-# Wasserstand messen
-
 from grovepi import *
 
+ultrasonic_ranger = 4
+
 def wasserstand():
- ultrasonic_ranger = 4
  distanz = ultrasonicRead(ultrasonic_ranger)
+ return distanz
 
- print(distanz)
+def wasserstand_proz():
+ fuelmenge_proz = int(((-1)*(wasserstand()) + 51) * 2)
+ return fuelmenge_proz
 
- if distanz < 5:
-  print("Das Fass ist voll")
- elif distanz < 20:
-  print("Das Fass ist halb voll")
- elif distanz < 50:
-  print("Das Fass ist leer")
- elif distanz > 50:
-  print("Es besteht ein Fehler mit dem Sensor!")
-
-wasserstand()
